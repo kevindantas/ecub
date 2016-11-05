@@ -1,0 +1,263 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::selection {
+	background: #9ade33;
+	color: #121212;
+}
+
+.button::selection,
+.logo img::selection {
+	background: transparent;
+	color: inherit;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+svg {
+	width: 84px;
+	height: 84px;
+}
+
+.round {
+	border-radius: 1000px;
+	padding: 8px;
+	display: inline-block;
+}
+
+.button {
+	border: 2px solid #1c676c;
+	text-decoration: none;
+	color: #1c676c;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding: 16px 28px;
+	font-weight: 500;
+	transition: .3s ease-in;
+}
+
+.button:hover, .button:focus, .button:active {
+	background: #1c676c;
+	color: #fff;
+}
+
+.borderHighlight {
+	border-left: 2px solid #9ade33; 
+	padding-left: 16px;
+}
+
+section .wrapper {
+	display: flex;
+}
+
+section.align-end .wrapper {
+	justify-content: flex-end;
+}
+
+
+.wrapper {
+	padding: 160px 8px;
+	width: 1200px;
+	margin: auto;
+}
+
+
+
+h1, h2, h3, h4 {
+	font-weight: 300;
+	margin-bottom: 16px;
+	font-family: 'Rajdhani'
+}
+
+h1 strong, h2 strong, h3 strong, h4 strong {
+	font-weight: 500;
+}
+
+h1 {
+	color: #1c676c;
+	font-size: 60px;
+	margin-bottom: 32px;
+}
+
+h1 strong {
+	font-weight: 500;
+}
+
+h3 {
+	color: #9ade33;
+	font-size: 42px;
+	font-weight: 500;
+}
+
+p {
+	margin-bottom: 16px;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+
+
+
+
+.icons-wrapper {
+	display: flex;
+	text-align: center;
+	font-family: 'Rajdhani';
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+
+.icons-wrapper .icon {
+	flex-basis: 25%;
+	margin-right: 32px;
+}
+
+
+
+.animate path {
+	stroke-dasharray: 210px 210px;
+	stroke-dashoffset: -210px;
+	transition: 0.2s ease-in;
+	will-change: stroke-dashoffset;
+}
+
+.animate circle {
+	stroke-dasharray: 270px 270px;
+	stroke-dashoffset: -270px;
+	will-change: stroke-dashoffset;
+}
+
+.animate circle, .animate path {
+	animation: dashoffset 1s forwards ease-in;
+}
+
+.animate.-long-path circle, 
+.animate.-long-path path {
+	stroke-dasharray: 300px 300px;
+	stroke-dashoffset: -300px;
+	animation-duration: 1.2s;
+}
+
+
+@keyframes dashoffset{
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+
+/************************************
+*			    Navbar 				*
+*************************************/
+.navbar {
+	background: white;
+	box-shadow: 0 5px 20px rgba(0,0,0,.1);
+	height: 70px;
+	line-height: 70px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+
+.navbar nav {
+	display: flex;
+}
+
+.navbar .logo {
+	flex-grow: 1;
+	padding: 14px;
+}
+
+.navbar .menu {
+	display: flex;
+	list-style: none;
+}
+
+.navbar .menu li {
+	border-top: 6px solid transparent;
+}
+
+.navbar .menu a {
+	text-decoration: none;
+	padding: 0 30px;
+	color: #333;
+	margin-top: -6px;
+	display: block;
+	transition: 0.2s ease-in;
+}
+
+.navbar .menu a:hover {
+	color: #9ade33;
+}
+
+
+.navbar .menu li.active {
+	border-top: 6px solid #9ade33;
+}
+
+.navbar .menu li.active a {
+	color:  #9ade33;
+}
+
+
+
+section h2 {
+	font-size: 55px;
+}
+
+
+
+.content {
+	max-width: 480px;
+}
+
+.dark  {
+	background: #121212;
+	color: #eee;
+}
+
+.dark h2 {
+	color: #9ade33;
+	line-height: 1;
+}
+
+
+section {
+	background-size: 10%;
+}
+
+#banner {
+	background: url(../img/banner.jpg) no-repeat 0 -70px;
+	height: 90vh;
+}
+
+
+#design {
+	background: url(../img/design.jpg) no-repeat;
+}
+
+#motores {
+	background: url(../img/motores.jpg) no-repeat;
+}
+
+
+#geradores {
+	background: url(../img/geradores.jpg) no-repeat;
+}
+
+#baterias {
+	background: url(../img/baterias.jpg) no-repeat;
+}
+
+
+#app {
+	background: #121212 url(../img/app.svg) no-repeat center;
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
