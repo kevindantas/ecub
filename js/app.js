@@ -21,9 +21,6 @@ for (var i = menuItems.length - 1; i >= 0; i--) {
 	menuItems[i].addEventListener('click', clickMenu)
 }
 
-
-
-console.log(menu.offsetLeft)
 menuAnimate.style.width = menuItems[0].offsetWidth+'px';
 menuAnimate.style.transform = 'translateX('+menu.offsetLeft+'px)';
 
@@ -41,6 +38,7 @@ function handleScroll(e) {
 			iconsWrapper ? iconsWrapper.classList.add('animate') : null;
 
 			changeMenu(i);
+			makeParallax();
 			return;
 		}
 	}
@@ -60,14 +58,21 @@ function changeMenu(index) {
 	menuAnimate.style.width = menuItems[(menuItems.length-1) - index].offsetWidth+'px';
 	menuAnimate.style.transform = 'translateX('+(menuLeft + itemLeft)+'px)';
 	menuAnimate.style.opacity = 1;
-
-	
-	menuItems[(menuItems.length-1) - i]
 }
-
 
 function calcPos(scrollPos, element) {
 	return scrollPos > (element.offsetTop-200) && scrollPos < element.offsetTop-200+element.offsetHeight
 }
 
 window.addEventListener('scroll', handleScroll)
+
+
+
+document.querySelector('.mobile-menu-button').addEventListener('click', function (e) {
+	e.preventDefault();
+	menu.classList.toggle('mobile-menu');
+	
+	setTimeout(function () {
+		menu.classList.toggle('active');		
+	})
+});

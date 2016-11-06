@@ -173,10 +173,11 @@ p {
 
 .navbar nav {
 	display: flex;
+	justify-content: space-between;
+	
 }
 
 .navbar .logo {
-	flex-grow: 1;
 	padding: 14px;
 }
 
@@ -197,10 +198,6 @@ p {
 	} 
 
 
-.navbar .menu li {
-	border-top: 6px solid transparent;
-}
-
 .navbar .menu a {
 	text-decoration: none;
 	padding: 0 30px;
@@ -217,8 +214,38 @@ p {
 		color:  #9ade33;
 	}
 
+/***************************
+****	Mobile Menu		****
+****************************/
+.mobile-menu-button {
+	text-indent: -9999px;	
+}
 
+.mobile-menu-icon {
+	display: none;
+	border-radius: 100px;
+	background: #9ade33;
+	width: 30px;
+	height: 4px;
+	position: relative;
+	margin-top: 30px;
+	margin: 32px 16px;
+}
 
+.mobile-menu-icon::before,
+.mobile-menu-icon::after
+{
+	content: '';
+	background: inherit;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	position: absolute;
+	left: 0;	
+}
+
+	.mobile-menu-icon::before {	top: -8px;}
+	.mobile-menu-icon::after  { top: 8px; }
 
 
 section h2 {
@@ -242,31 +269,33 @@ section h2 {
 }
 
 
-section {
-	background-size: 10%;
-}
 
 #banner {
-	background: url(../img/banner.jpg) no-repeat 0 -70px;
+	background: url(../img/banner.jpg) no-repeat;
 	height: 90vh;
+	background-size: cover;
 }
 
 
 #design {
 	background: url(../img/design.jpg) no-repeat;
+	background-size: cover;
 }
 
 #motores {
 	background: url(../img/motores.jpg) no-repeat;
+	background-size: cover;
 }
 
 
 #geradores {
 	background: url(../img/geradores.jpg) no-repeat;
+	background-size: cover;
 }
 
 #baterias {
 	background: url(../img/baterias.jpg) no-repeat;
+	background-size: cover;
 }
 
 
@@ -274,4 +303,87 @@ section {
 	background: #121212 url(../img/app.svg) no-repeat center;
 	padding-top: 200px;
 	padding-bottom: 200px;
+}
+
+
+section {
+	background-size: cover;
+}
+
+@media (max-width: 1200px) {
+	.wrapper {
+		width: 100%;
+		padding: 130px 32px;
+	}
+	
+	
+	#banner {
+		height: 75vh;
+	}
+	
+	#banner,
+	#motores,
+	#baterias
+	{ 
+		background-position-x: -30vw;
+		background-size: 150%;
+	}
+	
+	#design,
+	#geradores
+	{ 
+		background-position-x: -5vw;
+		background-size: 150%;
+	}
+}
+
+
+
+@media (max-width: 760px) {
+	.mobile-menu-icon {
+		display: block;
+	}
+	
+	.navbar  nav {
+		/*flex-direction: row-reverse;*/
+	}
+	
+	.navbar .menu {
+		display: none;
+		text-align: right;
+		width: 100%;
+		box-shadow: 0 5px 20px rgba(0,0,0,.1);
+		background: #fff;
+		display: block;
+		position: absolute;
+		top: 70px;
+		clip-path: circle(0% at 90% -50px);
+		transition: 0.4s cubic-bezier(0, 0, 0.2, 1);
+	}
+	
+	.navbar .menu li a {
+		line-height: 3
+	}
+
+	
+	.navbar .menu.mobile-menu.active {
+		clip-path: circle(150% at 90% -50px);
+	}
+}
+
+
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: 42px;
+		margin-bottom: 8px;
+	}
+	
+	h3 {
+		font-size: 36px;
+	}
+	
+	.wrapper {
+		padding: 90px 16px;
+	}
 }
