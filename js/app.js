@@ -30,11 +30,16 @@ menuAnimate.style.transform = 'translateX('+menu.offsetLeft+'px)';
 function handleScroll(e) {
 	
 	
-	for (var i = sections.length - 1; i >= 0; i--) 
-		menuItems[(menuItems.length-1) - i].classList.remove('active');		
+	for (var i = sections.length - 1; i >= 0; i--) {
+		menuItems[(menuItems.length-1) - i].classList.remove('active');
+	} 
 	
 	for (var i = sections.length - 1; i >= 0; i--) {
 		if(calcPos(window.scrollY, sections[i])){
+			
+			var iconsWrapper = sections[i].querySelector('.icons-wrapper')		
+			iconsWrapper ? iconsWrapper.classList.add('animate') : null;
+
 			changeMenu(i);
 			return;
 		}

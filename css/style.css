@@ -116,29 +116,35 @@ p {
 .icons-wrapper .icon {
 	flex-basis: 25%;
 	margin-right: 32px;
+	opacity: 0;
+	transition: .3s ease-in;
+}
+
+.icons-wrapper.animate .icon {
+	opacity: 1; 
 }
 
 
 
-.animate path {
+.icons-wrapper path {
 	stroke-dasharray: 210px 210px;
 	stroke-dashoffset: -210px;
 	transition: 0.2s ease-in;
 	will-change: stroke-dashoffset;
 }
 
-.animate circle {
+.icons-wrapper circle {
 	stroke-dasharray: 270px 270px;
 	stroke-dashoffset: -270px;
 	will-change: stroke-dashoffset;
 }
 
 .animate circle, .animate path {
-	animation: dashoffset 1s forwards ease-in;
+	animation: dashoffset 1s forwards ease-in 0s;
 }
 
-.animate.-long-path circle, 
-.animate.-long-path path {
+.icons-wrapper .-long-path circle, 
+.icons-wrapper .-long-path path {
 	stroke-dasharray: 300px 300px;
 	stroke-dashoffset: -300px;
 	animation-duration: 1.2s;
