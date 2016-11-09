@@ -1,8 +1,17 @@
+var smoothScroll = new SmoothScroll();
+
 function clickMenu (e) {
+	e.preventDefault();
 	for (var i = menuItems.length - 1; i >= 0; i--)
 		menuItems[i].classList.remove('active');
 
 	this.classList.add('active');
+
+	var target = e.target.getAttribute('href');
+
+
+	smoothScroll.scrollTo(target);
+
 }
 
 var menu = document.querySelector('.navbar .menu');
