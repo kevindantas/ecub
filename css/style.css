@@ -374,8 +374,37 @@ section {
 	
 	#banner {
 		height: auto;
+		padding-top: 20px;
+		padding-left: 220px;
+	}
+
+	section {
+		background-position-x: -47vw;
+	}
+
+	#banner h1 {
+		margin-bottom: 8px;
+	}
+
+
+	h2 {
+		font-size: 46px;
+	}
+
+	.wrapper {
+		padding: 50px 32px;
+	}
+
+	#motores,
+	#baterias {
+		padding-left: 230px;
+		background-position-x: -47vw;
 	}
 	
+
+	.content {
+		max-width: 100%;
+	}
 	
 	.mobile-menu-icon {
 		display: block;
@@ -396,6 +425,7 @@ section {
 		top: 70px;
 		right: 0;
 		opacity: 0;
+		pointer-events: none;
 		clip-path: circle(0% at 95% -50px);
 		transition: 0.4s cubic-bezier(0, 0, 0.2, 1);
 	}
@@ -407,6 +437,7 @@ section {
 	
 	.navbar .menu.mobile-menu.active {
 		opacity: 1;
+		pointer-events: all;
 		clip-path: circle(150% at 95% -50px);
 	}
 }
@@ -426,17 +457,29 @@ section {
 	h3 {
 		font-size: 36px;
 	}
+
+	#banner {
+		padding: 0;
+		padding-top: 60px;
+	}
 	
-	section {
+	section, #motores, #baterias {
 		background-size: 150%;
-		padding-top: 120px;
+		padding: 0;
+	}
+
+	#app {
+		padding: 0;
 	}
 	
 	.wrapper {
 		padding: 40px 16px;
 	}
-}
 
+	#banner .wrapper, #motores .wrapper, #baterias .wrapper {
+	    background-color: rgba(255,255,255,0.75);
+	}
+}
 
 @media (max-width: 480px) {
 	h2 {
